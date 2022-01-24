@@ -24,6 +24,10 @@ class Alerta extends Model {
                 modelName: 'alerta',
             });
     }
+
+    static associate(models) {
+        Alerta.hasMany(models.localizacao, { foreignKey: 'id_alerta' });
+    }
 }
 
 module.exports = Alerta;
